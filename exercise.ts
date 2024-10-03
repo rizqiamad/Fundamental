@@ -119,14 +119,28 @@
 /**
  * Change every letter a into *
  */
-let words:string = 'An apple a day keeps the doctor away'
-let expectedAnswer:string = '*n *pple * d*y keeps the doctor *w*y'
-let arrword:string[] = words.split('')
-for (let i = 0; i < arrword.length; i++) {
-    if (arrword[i] === 'a' || arrword[i] === 'A') {
-        arrword[i] = '*'
-    }
+// let words:string = 'An apple a day keeps the doctor away'
+// let expectedAnswer:string = '*n *pple * d*y keeps the doctor *w*y'
+// let arrword:string[] = words.split('')
+// for (let i = 0; i < arrword.length; i++) {
+//     if (arrword[i] === 'a' || arrword[i] === 'A') {
+//         arrword[i] = '*'
+//     }
+// }
+// words = arrword.join('')
+// console.log(words);
+// console.log(expectedAnswer);
+
+/**
+ * For looping reverse (Palindrome)
+ */
+let words:string = 'hello'
+let result:string = ''
+for (let i = words.length - 1; i >= 0; i--) {
+    result += words.charAt(i);
 }
-words = arrword.join('')
-console.log(words);
-console.log(expectedAnswer);
+if (words === result) {
+    console.log('Palindrome');
+}else{
+    console.log('Not palindrome');
+}
