@@ -142,7 +142,7 @@
 
 const letter:string = 'Hello@ Stu?dent Purwa4dhika';
 console.log(letter);
-console.log(letter.replace(/[^a-zA-Z\s]/g, ''));    //kecuali huruf a-z dan A-Z juga \s spasi
+console.log(letter.replace(/[^a-zA-Z\s]/g, ''));    //kecuali huruf a-z dan A-Z juga \s spasi /g global
 console.log(letter.replace(/[a-zA-Z\s]/g, ''));    //huruf a-z dan A-Z juga \s spasi dihapus
 
 /**
