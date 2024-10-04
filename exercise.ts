@@ -132,15 +132,39 @@
 // console.log(expectedAnswer);
 
 /**
+ * Changing every letter with regex
+ */
+// const str:string = 'An apple a day keeps the doctor away';
+// const res:string = str.replace(/a/g,'*');   //sensitive
+// const res2:string = str.replace(/a/gi,'*'); //insensitive
+// console.log(res);
+// console.log(res2);
+
+const letter:string = 'Hello@ Stu?dent Purwa4dhika';
+console.log(letter);
+console.log(letter.replace(/[^a-zA-Z\s]/g, ''));    //kecuali huruf a-z dan A-Z juga \s spasi
+console.log(letter.replace(/[a-zA-Z\s]/g, ''));    //huruf a-z dan A-Z juga \s spasi dihapus
+
+/**
  * For looping reverse (Palindrome)
  */
-let words:string = 'hello'
-let result:string = ''
-for (let i = words.length - 1; i >= 0; i--) {
-    result += words.charAt(i);
-}
-if (words === result) {
-    console.log('Palindrome');
-}else{
-    console.log('Not palindrome');
-}
+// let words:string = 'hello'
+// let result:string = ''
+// for (let i = words.length - 1; i >= 0; i--) {
+//     result += words.charAt(i);
+// }
+// if (words === result) {
+//     console.log('Palindrome');
+// }else{
+//     console.log('Not palindrome');
+// }
+
+/**
+ * Sorting Tsania
+ */
+// let nomor1 : number = 42
+// let nomor2 : number = 5
+// let nomor3 : number = 18
+
+// let all = [(nomor1), (nomor2), (nomor3)]
+// console.log(all.sort((a, b) => {return a - b}).join(','))
