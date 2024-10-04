@@ -1,9 +1,7 @@
-let arr:string[] = ['Apple', 'Manggo', 'Durian'];
+let arr:number[] = [10,20,30,40,50];
 
-console.log(arr.toString());
-console.log(arr.includes('Apple'));
+let newArr:number[] = arr.map((item, index) =>  item += 5)
+let newArr2:number[] = arr.filter((item) =>  item > 20)
 
-let num:number = 1
-if (num) {
-    console.log('True');
-}
+console.log(newArr);
+console.log(newArr2);
