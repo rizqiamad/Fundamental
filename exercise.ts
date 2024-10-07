@@ -69,3 +69,22 @@
 // let evenArr:number[] = []
 // evenArr = removeOddNumber([1,2,3,4,5,6,7,8,9,10])
 // console.log(evenArr);
+
+// function triangle(n: number) {
+//     let arr: (number|string)[] = []
+//     let result: string = ""
+//     for (let i = 1; i <= n; i++){
+//         if ( i % 5 == 0 && i % 3 == 0 ){
+//             arr.push("FizzBuzz")
+//         } else if (i % 5 == 0){
+//             arr.push("Buzz")
+//         } else if (i % 3 == 0){
+//             arr.push("Fizz")
+//         } else {
+//             arr.push(i)
+//         }
+//         result = arr.join(",");
+//     }
+//     return result
+// }
+// console.log(triangle(6))
