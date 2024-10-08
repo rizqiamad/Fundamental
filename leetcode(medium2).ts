@@ -1,13 +1,24 @@
 function lengthOfLongestSubstring(s: string): number {
-    let result:number = 0
-    let newStr:string = ''
+  let result: number = 0;
+  let subString: string;
+  let lengthTotal: number[] = [];
+  if (s !== "") {
     for (let i = 0; i < s.length; i++) {
-        for (let j = 0; j < newStr.length; j++) {
-            if (s[i] === newStr[j]) continue
-            if (j === newStr.length - 1) newStr += s[i]
-        }
+      subString = s[i];
+      for (let j = i + 1; j < s.length; j++) {
+        if (!subString.includes(s[j])) subString += s[j];
+        else break
+        if (j === s.length - 1) break;
+      }
+      lengthTotal[i] = subString.length;
     }
-    return result
-};
+    lengthTotal.sort((a, b) => a - b);
+    result = lengthTotal[lengthTotal.length - 1];
+  } else {
+    result = s.length;
+  }
+  return result;
+}
 
-lengthOfLongestSubstring('awokawok')
+let res = lengthOfLongestSubstring(" ");
+console.log(res);
