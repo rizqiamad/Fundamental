@@ -70,3 +70,62 @@
 // const krisna = new Student('Krisna', '2005-05-11', 'ahmadhanif759@gmail.com', 100);
 
 // console.log(calculateArrOfStudent([hanif,jelang,krisna]));
+
+/**
+ * exercise 2
+ */
+class Product{
+    #name:string = ''
+    #price:number = 0
+
+    constructor(name:string, price:number){
+        this.#name = name;
+        this.#price = price;
+    }
+
+    getPrice(){
+        return this.#price
+    }
+
+    getName(){
+        return this.#name
+    }
+
+}
+
+class Transaction extends Product{
+    #total:number = 0
+    #qty:number = 0
+
+    constructor(productName:string, price:number, qty:number){
+        super(productName, price)
+        this.#qty = qty
+    }
+
+    showTotal(){
+        this.#total = super.getPrice() * this.#qty
+        console.log(`You buy ${super.getName()}, with quantity ${this.#qty}, Total : ${this.#total}`)
+    }
+}
+
+let cart:Array<Transaction> = []
+
+function addToCart(item:Transaction) {
+    cart.push(item)
+}
+
+function showTotalTransaction(cart:Array<Transaction>) {
+    for (const item of cart) {
+        item.showTotal();
+    }
+}
+
+let book:Transaction = new Transaction('Book', 10000, 5)
+let pencil:Transaction = new Transaction('Pencil', 1000, 10)
+let shoes:Transaction = new Transaction('Shoes', 50000, 2)
+
+addToCart(book)
+addToCart(pencil)
+addToCart(shoes)
+
+showTotalTransaction(cart)
