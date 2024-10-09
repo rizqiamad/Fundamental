@@ -1,18 +1,32 @@
 function longestCommonPrefix(strs: string[]): string {
     let res:string = ''
-    
-    for (let i = 0; i < strs[0].length; i++) {
-        res += strs[0][i]
-        for (let j = 1; j < strs.length; j++) {
-            console.log(strs[j].includes(res) && strs[j][0] );
-            if (!strs[j].includes(res)){
-                res = res.substring(0, res.length - 1)
-                return res
+    let subRes:string = ''
+    let pointer:number = 0
+    let check:boolean
+
+    if (strs.length > 1) {
+        for (let i = 0; i < strs[0].length; i++) {
+            subRes += strs[0][i]
+            pointer = 0
+            check = false
+            for (const item of strs) {
+                if (item === '') return res = ''
+                if (item[i] === subRes[i]) pointer++
+                else{
+                    check = true
+                    break
+                }
+                if (pointer === strs.length) res += item[i]
+            }
+            if (check) {
+                break
             }
         }
+    }else{
+        res = strs[0]
     }
 
     return res
 };
 
-console.log(longestCommonPrefix(['dog','god','good']));
+console.log(longestCommonPrefix(['aya','aya','']));
