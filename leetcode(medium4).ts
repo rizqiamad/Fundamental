@@ -16,6 +16,7 @@ function longestPalindrome(s: string): string {
             }
         }
     }
+    console.log(newStr);
     if (newStr.length > 0) {
         for (const item of newStr) {
             if (item === item.split('').reverse().join('')) {
@@ -24,9 +25,10 @@ function longestPalindrome(s: string): string {
         }
     }
     subRes.sort((a, b) => a.length - b.length)
+    console.log(subRes);
     result = subRes[subRes.length - 1]
     return result
 };
 
-let res = longestPalindrome('aaaaayaam')
+let res = longestPalindrome("xaabacxcabaaxcabaax")
 console.log(res);
