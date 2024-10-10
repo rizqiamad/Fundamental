@@ -49,33 +49,47 @@ class ShootingGame{
     }
 
     start(){
-        let round:number = 0
+        let round:number = 1
         while (this.#P1.getHealth() > 0 && this.#P2.getHealth() > 0) {
             console.log(`================= Round : ${round} ==================`);
             this.#P1.showStatus()
             this.#P2.showStatus()
-            console.log(`===============================================\n`);
             
             this.#P1.useItem(this.getRandomItem())
             this.#P2.useItem(this.getRandomItem())
             
             this.#P2.damage(this.#P1.getPower())
+
+            if (this.#P2.getHealth() <= 0){
+                console.log(`\n${this.#P2.getName()} has been damaged by ${this.#P1.getName()} with ${this.#P1.getPower()} Power`);
+                console.log(`===============================================\n`);
+                break
+            }
+
+            console.log(`\n${this.#P2.getName()} has been damaged by ${this.#P1.getName()} with ${this.#P1.getPower()} Power`);
             this.#P1.damage(this.#P2.getPower())
+
+            if (this.#P1.getHealth() <= 0) {
+                console.log(`${this.#P1.getName()} has been damaged by ${this.#P2.getName()} with ${this.#P2.getPower()} Power`);
+                console.log(`===============================================\n`);
+                break
+            }
+            
+            console.log(`${this.#P1.getName()} has been damaged by ${this.#P2.getName()} with ${this.#P2.getPower()} Power`);
+            console.log(`===============================================\n`);
             
             round++
         }
         this.#P1.showStatus()
         this.#P2.showStatus()
-        console.log(`=================================`);
-        if (this.#P1.getHealth() <= 0) console.log(`|    The Winner is P2 : ${this.#P2.getName()}   |`);
-        else console.log(`|  The Winner is : P1 : ${this.#P1.getName()}   |`);
-        console.log(`=================================\n`);
+        if (this.#P1.getHealth() <= 0) console.log(`The Winner is P2 ${this.#P2.getName()}`);
+        else console.log(`The Winner is P1 : ${this.#P1.getName()}`);
         
     }
 }
 
-const hanif:Player = new Player('Hanif')
-const ahmad:Player = new Player('Ahmad')
+const player1:Player = new Player('Player 1')
+const player2:Player = new Player('Player 2')
 
-const shootingGame:ShootingGame = new ShootingGame(hanif,ahmad);
+const shootingGame:ShootingGame = new ShootingGame(player1,player2);
 shootingGame.start()
