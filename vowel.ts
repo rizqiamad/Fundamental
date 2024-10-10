@@ -6,9 +6,9 @@
 */
 
 function searchAmountOfVowel(str:string):number {
-    let newStr:string[] = str.split('')
 
-    return newStr.filter(item => 'aiueoAIUEO'.includes(item)).length
+    return str.split('').filter(item => 'aiueoAIUEO'.includes(item)).length
+
 }
 
 console.log(searchAmountOfVowel('Bandung'))
