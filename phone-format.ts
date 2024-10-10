@@ -6,17 +6,23 @@
     output = '(987)-654-321'
 */
 
-function formattingNumber(num:number) {
-    let res:string = ''
+// function formattingNumber(num:number) {
+//     let res:string = ''
 
-    res += '('
-    for (let i = 0; i < num.toString().length; i++) {
-        if (i === 3) res += ')'
-        if (i % 3 === 0 && i !== 0) res += '-'
-        res += num.toString()[i]
-    }
+//     res += '('
+//     for (let i = 0; i < num.toString().length; i++) {
+//         if (i === 3) res += ')'
+//         if (i % 3 === 0 && i !== 0) res += '-'
+//         res += num.toString()[i]
+//     }
 
-    return res
-}
+//     return res
+// }
 
-console.log(formattingNumber(123456789));
+// console.log(formattingNumber(123456789));
+
+function phoneFormat(phoneNumber : number) {
+    return phoneNumber.toString().replace(/(\d{3})(\d{3})(\d{3})/, "($1)-$2-$3");
+};
+
+console.log(phoneFormat(123456789))
