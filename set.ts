@@ -1,15 +1,15 @@
-const fruits: string[] = ['banana', 'apple', 'jackfruit', 'apple']
+const fruits: string[] = ["banana", "apple", "jackfruit", "apple"];
 
-const setFruits = new Set(fruits)
+const setFruits = new Set(fruits);
 
-setFruits.add('apple')
+setFruits.add("apple");
 
 console.log(setFruits.values());
 
-setFruits.forEach(item => {
-    console.log(item);
-})
+setFruits.forEach((item) => {
+  console.log(item);
+});
 
-setFruits.clear()
+setFruits.clear();
 
 console.log(setFruits);
