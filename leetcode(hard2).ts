@@ -1,14 +1,12 @@
 function firstMissingPositive(nums: number[]): number {
     let num:number = 1
 
-    nums.sort((a, b) => a - b)
+    let setNums = new Set(nums)
 
-    console.log(nums);
-
-    // while (nums.includes(num)) {
-    //     if (!nums.includes(num)) return num
-    //     num++
-    // }
+    while (setNums.has(num)) {
+        if (!setNums.has(num)) return num
+        num++
+    }
 
     return num
 
