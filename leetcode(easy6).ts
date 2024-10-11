@@ -1,9 +1,7 @@
-function removeDuplicates(nums: number[]): number {
-    let setNums = new Set(nums)
-
-    console.log(setNums.size);
-
-    return 1
+function plusOne(digits: number[]): number[] {
+    let num:bigint = BigInt(digits.join(''))
+    num++
+    return num.toString().split('').map(item => Number(item))
 };
 
-removeDuplicates([1,2,2,2,3,4])
+plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3])
