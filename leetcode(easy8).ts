@@ -1,5 +1,7 @@
 function addBinary(a: string, b: string): string {
-    let num:bigint = BigInt(parseInt(a,2) + parseInt(b,2))
+    let num:bigint = BigInt('0b' + a) + BigInt('0b' + b)
+
+    console.log(num)
 
     return num.toString(2)
 };
