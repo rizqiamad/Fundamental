@@ -21,4 +21,4 @@ function climbStairs(n: number): number {
   return res + 2;
 }
 
-console.log(climbStairs(4));
+console.log(climbStairs(5));
