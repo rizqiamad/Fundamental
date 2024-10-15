@@ -2,23 +2,23 @@
 //1 2 3 5 8 13 21 34 55 89
 //1 1 2 3 5 8  13 21 34
 function climbStairs(n: number): number {
-    if (n === 1) return n
-    if (n === 2) return n
+  if (n === 1) return n;
+  if (n === 2) return n;
 
-    let res:number = 0
+  let res: number = 0;
 
-    let a:number = 0
-    let b:number = 1
-    let c:number = 0
-    for (let i = 0; i < n - 2; i++) {
-        c = a + b
-        res += c
-    
-        a = b
-        b = c
-    }
+  let a: number = 0;
+  let b: number = 1;
+  let c: number = 0;
+  for (let i = 0; i < n - 2; i++) {
+    c = a + b;
+    res += c;
 
-    return res + 2
-};
+    a = b;
+    b = c;
+  }
 
-console.log(climbStairs(4))
+  return res + 2;
+}
+
+console.log(climbStairs(4));
