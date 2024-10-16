@@ -1,15 +1,7 @@
-function convertExcelColumn(str: string): number {
-  if (!str.split("").every((item) => item.match(/[A-Z]/))) return 0;
-
-  let res: number = 0;
-
-  let x = str.length - 1;
-  for (let i = 0; i < str.length; i++) {
-    res += 26 ** i * (str.charCodeAt(x--) - 64);
-  }
-
-  return res;
+function majority(nums: number[]): number {
+  return nums.filter(
+    (item, _idx, arr) => arr.filter((val) => val === item).length > arr.length / 2
+  )[0];
 }
 
-// Harus menggunakan huruf capital atau akan mengembalikan nilai 0
-console.log(convertExcelColumn("ZZZZZ"));
+console.log(majority([1,4,4,4,3]))
