@@ -17,8 +17,8 @@ function maximumProfit(input: number[]) {
 
   console.log(result)
 
-  if (result.every((item) => item > 0)) return 0;
-  return -result.sort((a, b) => a - b);
+  if (result.every((item) => item >= 0)) return 0;
+  return -result.sort((a, b) => a - b)[0];
 }
 
-console.log(maximumProfit([1,2,3,4]));
+console.log(maximumProfit([4,6,1,3,4]));
