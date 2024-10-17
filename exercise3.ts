@@ -15,4 +15,4 @@ function pascalTriangle(n: number): number[][] {
   return res;
 }
 
-console.log(pascalTriangle(4))
+console.log(pascalTriangle(6))

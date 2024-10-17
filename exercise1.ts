@@ -4,4 +4,5 @@ function majority(nums: number[]): number {
   )[0];
 }
 
-console.log(majority([1,4,4,4,3]))
+//akan mengembalikan `undefined` jika tidak ada yang lebih dari setengah populasi
+console.log(majority([1,4,4,4,3,3,3,3]))
